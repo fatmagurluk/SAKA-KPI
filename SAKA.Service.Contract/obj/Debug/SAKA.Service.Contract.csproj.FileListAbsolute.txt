@@ -1,0 +1,7 @@
+D:\SAKA\SAKA.Service.Contract\bin\Debug\SAKA.Service.Contract.dll
+D:\SAKA\SAKA.Service.Contract\bin\Debug\SAKA.Service.Contract.pdb
+D:\SAKA\SAKA.Service.Contract\bin\Debug\SAKA.DTO.dll
+D:\SAKA\SAKA.Service.Contract\bin\Debug\SAKA.DTO.pdb
+D:\SAKA\SAKA.Service.Contract\obj\Debug\SAKA.Service.Contract.csprojResolveAssemblyReference.cache
+D:\SAKA\SAKA.Service.Contract\obj\Debug\SAKA.Service.Contract.dll
+D:\SAKA\SAKA.Service.Contract\obj\Debug\SAKA.Service.Contract.pdb

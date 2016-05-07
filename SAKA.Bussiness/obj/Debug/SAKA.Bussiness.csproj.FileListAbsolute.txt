@@ -1,0 +1,8 @@
+D:\SAKA\SAKA.Bussiness\bin\Debug\SAKA.Bussiness.dll
+D:\SAKA\SAKA.Bussiness\bin\Debug\SAKA.Bussiness.pdb
+D:\SAKA\SAKA.Bussiness\bin\Debug\SAKA.DTO.dll
+D:\SAKA\SAKA.Bussiness\bin\Debug\SAKA.DTO.pdb
+D:\SAKA\SAKA.Bussiness\obj\Debug\SAKA.Bussiness.csprojResolveAssemblyReference.cache
+D:\SAKA\SAKA.Bussiness\obj\Debug\SAKA.Bussiness.dll
+D:\SAKA\SAKA.Bussiness\obj\Debug\SAKA.Bussiness.pdb
+D:\SAKA\SAKA.Bussiness\bin\Debug\SAKA.Bussiness.dll.config
