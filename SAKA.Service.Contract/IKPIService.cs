@@ -12,5 +12,11 @@ namespace SAKA.Service.Contract
     {
         [OperationContract] // 
         int count();
+
+        [OperationContract]
+        int sum();
+
+        [OperationContract]
+        string AppKpi();
     }
 }

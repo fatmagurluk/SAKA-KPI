@@ -8,18 +8,17 @@ namespace SAKA.DTO
 {
      public class DTO_ScoreCard
     {
+         // EKRANA BASTIRMAK İSTEDİĞİMİZ VERİLER YAZILDI
+         // period dediği gün ay yıl şeklinde 3 değer aldığımız için enum oluşturulacak
+         // statu bunun son drum olan kırmızzı sayı yeşil değerleri alıyor
 
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public decimal Target { get; set; }
-        public decimal Threshold { get; set; }
+     
+        public string NAME { get; set; }
+        public decimal VALUE { get; set; }
+         public string UNIT { get; set; } // dolar mı adetmi onlar
+         public DateTime DATE { get; set; }
+         public Period PERIOD { get; set; }
+         public Statu STATU { get; set; }
 
-        public DTO_ScoreCard(int id, string name, decimal target, decimal threshold)
-        {
-            ID = id;
-            Name = name;
-            Target = target;
-            Threshold = threshold;
-        }
     }
 }

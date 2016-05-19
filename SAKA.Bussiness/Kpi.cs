@@ -47,17 +47,55 @@ namespace SAKA.Bussiness
             var sorgu3 = list.Select(c => new {c.Name,c.Score }).OrderBy(c=> c.Score).ToList();
         }
 
-        public static void getScoreCard()
+
+        public static int sum()
         {
-            var list = new List<DTO_ScoreCard>();
+            return 1234;
+        }       
 
-            var scorecard = new DTO_ScoreCard[]
+        public static string AppKpi()
+        {
+            using (SAKADataDataContext dc = new SAKADataDataContext())
             {
-                new DTO_ScoreCard(1,"kaza", 20, 2),
-                new DTO_ScoreCard(2, "benzin", 1500, 50)
-            };
+                var kpi = new KPI();
+                kpi.ID = Guid.NewGuid();
+                kpi.Name = "Müşteri Adet";
+                kpi.Target = 30;
+                kpi.Threshold = 3;
+                kpi.ThresholdType = true; // 0 değer, 1 yüzde
+                kpi.Period ='Y';
+                kpi.Unit = "adet";
+                kpi.Direction = true;
+                kpi.CreationDate = DateTime.Now;
 
-            list.AddRange(scorecard);
+                dc.KPIs.InsertOnSubmit(kpi);
+                dc.SubmitChanges();
+
+                return kpi.Name;
+            }
+        }
+
+        public static string GetKpi()
+        {
+            using (SAKADataDataContext dc = new SAKADataDataContext())
+            {
+                var list = dc.KPIs.Where(x => x.Name == "Ciro").Select(c => new { c.ID, c.Target, c.Name, c.Threshold}).ToList();
+
+                var KpiList = new List<DTO_ScoreCard>();
+
+                foreach (var k in list)
+	            {
+		            var item = new DTO_ScoreCard();
+                    item.NAME = k.Name;
+                    
+                    list.Add(item);                    
+	            }
+
+                return KpiList.ToArray();
+            }
+
+            
+        }
         }
     }
 }

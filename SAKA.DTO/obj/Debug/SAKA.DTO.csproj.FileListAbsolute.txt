@@ -1,5 +1,4 @@
 D:\SAKA\SAKA.DTO\bin\Debug\SAKA.DTO.dll
 D:\SAKA\SAKA.DTO\bin\Debug\SAKA.DTO.pdb
-D:\SAKA\SAKA.DTO\obj\Debug\SAKA.DTO.csprojResolveAssemblyReference.cache
 D:\SAKA\SAKA.DTO\obj\Debug\SAKA.DTO.dll
 D:\SAKA\SAKA.DTO\obj\Debug\SAKA.DTO.pdb

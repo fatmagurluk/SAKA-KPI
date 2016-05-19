@@ -17,13 +17,21 @@ namespace SAKA.Web.UI
 
             var adress = new EndpointAddress("http://localhost:52695/KPIService.svc"); // service bağlantısı kuruyorum (Contract)
             var binding = new BasicHttpBinding();//Bağlantı binding yapıyorum
-            var channel = ChannelFactory<IKPIService>.CreateChannel(binding, adress); // channel elimde kodlar olduğu iiçn kullanıyorum. proxy elimde kodlar olmasaydı kullanırdım
+            var channel = ChannelFactory<IKPIService>.CreateChannel(binding, adress); // channel elimde kodlar olduğu için kullanıyorum. proxy elimde kodlar olmasaydı kullanırdım
 
             //bunları yazdıktan sonra kodları kullanabilirim
 
             var count = channel.count();
 
+            var sum = channel.sum();
+
             Response.Write(count);
+
+            Response.Write(" "+sum);
+
+            var kpiName = channel.AppKpi();
+
+            Response.Write(kpiName);
         }
     }
 }
