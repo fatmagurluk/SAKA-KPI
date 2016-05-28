@@ -10,7 +10,7 @@ namespace SAKA.DTO
     {
          // EKRANA BASTIRMAK İSTEDİĞİMİZ VERİLER YAZILDI
          // period dediği gün ay yıl şeklinde 3 değer aldığımız için enum oluşturulacak
-         // statu bunun son drum olan kırmızzı sayı yeşil değerleri alıyor
+         // statu bunun son drum olan kırmızı sayı yeşil değerleri alıyor
 
      
         public string NAME { get; set; }

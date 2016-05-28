@@ -4,19 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
+using SAKA.DTO;
 
 namespace SAKA.Service.Contract
 {
     [ServiceContract] // anlaşma kağıdım
     public interface IKPIService // Business ' i imzalamak zorundayım
     {
-        [OperationContract] // 
-        int count();
-
         [OperationContract]
-        int sum();
+       DTO_ScoreCard[] GetScoreCard();
+    //{
+    //    [OperationContract] // 
+    //    int count();
 
-        [OperationContract]
-        string AppKpi();
+    //    [OperationContract]
+    //    int sum();
+
+    //    [OperationContract]
+    //    string AppKpi();
     }
 }

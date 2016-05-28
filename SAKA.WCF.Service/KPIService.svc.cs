@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using SAKA.Bussiness;
+using SAKA.DTO;
 
 namespace SAKA.WCF.Service // IKPIServices 'ı burada kullanıyoruz
 {
@@ -13,19 +14,24 @@ namespace SAKA.WCF.Service // IKPIServices 'ı burada kullanıyoruz
     // NOTE: In order to launch WCF Test Client for testing this service, please select KPIService.svc or KPIService.svc.cs at the Solution Explorer and start debugging.
     public class KPIService : IKPIService
     {
-        public int count()
-        {
-            return Kpi.count();
-        }
 
-        public int sum()
+        public DTO_ScoreCard[] GetScoreCard()
         {
-            return Kpi.sum();
+            return Kpi.GetScoreCard();
         }
+        //public int count()
+        //{
+        //    return Kpi.count();
+        //}
 
-        public string AppKpi()
-        {
-            return Kpi.AppKpi();
-        }
+        //public int sum()
+        //{
+        //    return Kpi.sum();
+        //}
+
+        //public string AppKpi()
+        //{
+        //    return Kpi.AppKpi();
+        //}
     }
 }
