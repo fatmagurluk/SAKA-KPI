@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAKA.DTO", "SAKA.DTO\SAKA.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAKA.Bussiness", "SAKA.Bussiness\SAKA.Bussiness.csproj", "{CEE00292-E670-4D1D-AF1A-2FB933A61FFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAKA.WEBUIMVC", "SAKA.WEBUIMVC\SAKA.WEBUIMVC.csproj", "{5EA0F329-0FA5-4085-B0D6-124883A845AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{CEE00292-E670-4D1D-AF1A-2FB933A61FFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEE00292-E670-4D1D-AF1A-2FB933A61FFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEE00292-E670-4D1D-AF1A-2FB933A61FFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EA0F329-0FA5-4085-B0D6-124883A845AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EA0F329-0FA5-4085-B0D6-124883A845AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EA0F329-0FA5-4085-B0D6-124883A845AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EA0F329-0FA5-4085-B0D6-124883A845AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

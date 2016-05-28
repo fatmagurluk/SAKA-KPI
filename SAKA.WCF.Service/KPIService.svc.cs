@@ -19,19 +19,9 @@ namespace SAKA.WCF.Service // IKPIServices 'ı burada kullanıyoruz
         {
             return Kpi.GetScoreCard();
         }
-        //public int count()
-        //{
-        //    return Kpi.count();
-        //}
-
-        //public int sum()
-        //{
-        //    return Kpi.sum();
-        //}
-
-        //public string AppKpi()
-        //{
-        //    return Kpi.AppKpi();
-        //}
+        public DTO_Gauge[] GetGauge()
+        {
+            return Kpi.GetGauge();
+        }       
     }
 }

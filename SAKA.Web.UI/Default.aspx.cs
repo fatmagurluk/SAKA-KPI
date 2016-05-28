@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.ServiceModel;
 using SAKA.Service.Contract;
 using SAKA.DTO;
+using System.Drawing;
 
 namespace SAKA.Web.UI
 {
@@ -26,30 +27,64 @@ namespace SAKA.Web.UI
                 c.NAME,
                 VALUE = c.VALUE + " " + c.UNIT,
                 PERIOD = TarihFormat(c.DATE, c.PERIOD),
-                STATU= c.STATU
+                STATU = GetImage(c.STATU)
             });
             SCORECARD.DataBind();
 
+            var genislik = 400;
+            var yukseklik = 30;
+            var genislikOrani = 0.2;
+            foreach (var item in channel.GetGauge())
+            {
+                var max = Math.Max(item.TARGET_MAX, item.VALUE) * ((decimal)(1 + genislikOrani));
+                var genislikLeft = Math.Round(genislik * item.TARGET_MIN / max, 0);
+                var genislikNotr = Math.Round(genislik * (item.TARGET_MAX - item.TARGET_MIN) / max, 0);
+                var genislikRight = genislik - genislikLeft - genislikNotr;
+                var genislikValue = Math.Round(genislik * item.VALUE / max, 0);
 
-            //Response.Write(list);
-            //bunları yazdıktan sonra kodları kullanabilirim
+                Table table = new Table();
+                TableRow row1 = new TableRow();
+                TableCell row1cell1 = new TableCell();
 
-            //var count = channel.count();
+                row1cell1.Style.Add(HtmlTextWriterStyle.PaddingLeft, genislikValue + "px");
+                row1.Cells.Add(row1cell1);
+                table.Rows.Add(row1);
 
-            //var sum = channel.sum();
+                TableRow row2 = new TableRow();
+                TableCell row2cell1 = new TableCell();
 
-            //Response.Write(count);
+                row2cell1.Width = Unit.Pixel((int)genislikLeft);
+                row2cell1.Height = Unit.Pixel(yukseklik);
+                row2cell1.BackColor = item.DIRECTION == Direction.positive ? Color.Green : Color.Red;
+                row2.Cells.Add(row2cell1);
 
-            //Response.Write(" "+sum);
+                TableCell row2cell2 = new TableCell();
 
-            //var kpiName = channel.AppKpi();
+                row2cell2.Width = Unit.Pixel((int)genislikNotr);
+                //row2cell2.Height = Unit.Pixel(yukseklik);
+                row2cell2.BackColor = Color.Yellow;
+                row2.Cells.Add(row2cell2);
 
-            //Response.Write(kpiName);
+
+                TableCell row2cell3 = new TableCell();
+
+                row2cell3.Width = Unit.Pixel((int)genislikRight);
+                //row2cell2.Height = Unit.Pixel(yukseklik);
+                row2cell3.BackColor = row2cell1.BackColor == Color.Red ? Color.Green : Color.Red;
+                row2.Cells.Add(row2cell3);
+
+                table.Rows.Add(row2);
+                TableRow row3 = new TableRow();
+                TableCell row3cell1 = new TableCell();
+                row3cell1.HorizontalAlign = HorizontalAlign.Center;
+                row3cell1.Text = item.NAME;
+                row2.Cells.Add(row3cell1);
+                table.Rows.Add(row3);
+            }
         }
 
         private string TarihFormat(DateTime date, Period period)
         {
-            // periodda gün mü ay mı yıl mı
             if (period == Period.Year)
             {
                 return date.Year.ToString();
@@ -61,6 +96,13 @@ namespace SAKA.Web.UI
 
             return date.Day + "/" + date.Month + "/" + date.Year;
 
+        }
+
+        protected string GetImage(Statu statu)
+        {
+            if (statu == Statu.Bad) return "~/image/kirmizi.gif";
+            if (statu == Statu.Good) return "~/image/yesil.gif";
+            return "~/image/sari.gif";
         }
     }
 }

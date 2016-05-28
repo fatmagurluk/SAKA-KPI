@@ -13,6 +13,8 @@ namespace SAKA.Service.Contract
     {
         [OperationContract]
        DTO_ScoreCard[] GetScoreCard();
+        [OperationContract]
+        DTO_Gauge[] GetGauge();
     //{
     //    [OperationContract] // 
     //    int count();
